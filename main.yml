@@ -1,0 +1,7 @@
+- hosts: lbserver
+  roles:
+        - role: "lbserver"
+
+- hosts: webserver
+  roles: 
+        - role: "myapache"

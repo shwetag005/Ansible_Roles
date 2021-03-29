@@ -1,0 +1,14 @@
+- name: "Install haproxy"
+  package:
+          name: "haproxy"
+          state: present
+
+- name: "Copy the file"
+  template:
+          dest: "/etc/haproxy/haproxy.cfg"
+          src: "/etc/ansible/haproxy.cfg"
+
+- name: "Restart the service"
+  service:
+          name: "haproxy"
+          state: restarted

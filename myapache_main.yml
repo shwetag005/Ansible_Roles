@@ -1,0 +1,14 @@
+- name: "Install httpd"
+  package:
+          name: "httpd"
+          state: present
+
+- name: "Copy the file"
+  template:
+          dest: "/var/www/html"
+          src: "/etc/ansible/roles/index.html.j2"
+
+- name: "Restart the service"
+  service:
+          name: "httpd"
+          state: started
